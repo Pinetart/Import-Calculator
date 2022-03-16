@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div class='main-content'>
+      <h1>Vehicle Import Tax Calculator - Guyana (Gasoline) </h1>
+
+      <div class="car-age">
+        <input type="radio" checked name="carAge" value="new">
+        <label for="html">Under 4 Years (New) </label><br>
+        <input type="radio" name="carAge" value="old">
+        <label for="css">Over 4 Years Old (Old)</label>
+      </div>
+
+      <div class='input-fields'>
+        <form autocomplete="off" onsubmit="formSubmit(event)">
+          <label class='form-input'>
+            <span>Cost, Insurance and Freigh (CIF):</span>
+            <input required type="number" id='cif'></input>
+          </label>
+          <label class='form-radio'>
+            <span>Engine Size:</span>
+            <input type="radio"name="engineSize" value=1000 required/>
+            <label for="html">Not exceeding  1000cc</label><br>
+            <input type="radio" name="engineSize" value=1500>
+            <label for="css">Exceeding 1000 cc up to 1500 cc</label><br>
+            <input type="radio" name="engineSize" value=1800>
+            <label for="css">Exceeding 1500 cc up to 1800 cc</label><br>
+            <input type="radio" name="engineSize" value=2000>
+            <label for="css">Exceeding 1800 cc up to 2000 cc</label><br>
+            <input type="radio" name="engineSize" value=3000>
+            <label for="css">Exceeding 2000 cc up to 3000 cc</label><br>
+            <input type="radio" name="engineSize" value=3001>
+            <label for="css">Exceeding 3000 cc</label>
+          </label>
+          <div class="buttons">
+            <button type="submit" style='background: #034420;'>Submit</button>
+            <button type="reset" onclick="clearAll()" style="margin-left: 20px; background: #8b0000">Clear</button>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <div class='results'>
+          <div>
+            <h2>Duty</h2>
+            <p id='duty'>$0</p>
+          </div>
+          <div>
+            <h2>Excise</h2>
+            <p id='excise'>$0</p>
+          </div>
+          <div>
+            <h2>VAT</h2>
+            <p id='vat'>$0</p>
+          </div>
+        </div>
+        <div class='total'>
+          <div>
+            <h2 style="color: #8b0000">CIF</h2>
+            <p id='totalCif' style="color:	#D80000 ">$0</p>
+          </div>
+          <div>
+            <h2 style="color: #8b0000">Total Tax</h2>
+            <p id='totalTax' style="color:	#D80000 ">$0</p>
+          </div>
+          <div>
+            <h2 style="color: #8b0000">Total Cost</h2>
+            <p id='total' style="color:	#D80000 ">$0</p>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
