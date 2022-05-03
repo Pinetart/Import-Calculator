@@ -9,29 +9,29 @@ function clearAll() {
 
 function formSubmit(e) {
   e.preventDefault();
-  let duty = document.querySelector("#duty");
-  let excise = document.querySelector("#excise");
-  let vat = document.querySelector("#vat");
-  let totalCif = document.querySelector("#totalCif");
-  let total = document.querySelector("#total");
-  let totalTax = document.querySelector("#totalTax");
+  let duty = document.querySelector('#duty');
+  let excise = document.querySelector('#excise');
+  let vat = document.querySelector('#vat');
+  let totalCif = document.querySelector('#totalCif');
+  let total = document.querySelector('#total');
+  let totalTax = document.querySelector('#totalTax');
 
   let ccRadio = parseInt(
     document.querySelector('input[name="engineSize"]:checked').value
   );
-  let cif = parseInt(document.querySelector("#cif").value);
+  let cif = parseInt(document.querySelector('#cif').value);
 
   let carAge = document.querySelector('input[name="carAge"]:checked').value;
   function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   switch (carAge) {
-    case "old":
+    case 'old':
       switch (ccRadio) {
         case 1000:
           calDuty = 0;
-          calExcise = Math.round((cif + 878088) * 0.1 + 878088);
+          calExcise = Math.round((cif + 875700) * 0.1 + 875700);
           calVat = 0;
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -45,7 +45,7 @@ function formSubmit(e) {
           break;
         case 1500:
           calDuty = 0;
-          calExcise = Math.round((cif + 898995) * 0.1 + 898995);
+          calExcise = Math.round((cif + 896550) * 0.1 + 896550);
           calVat = 0;
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -59,7 +59,7 @@ function formSubmit(e) {
           break;
         case 1800:
           calDuty = 0;
-          calExcise = Math.round((cif + 1254412) * 0.3 + 1254412);
+          calExcise = Math.round((cif + 1251000) * 0.3 + 1251000);
           calVat = 0;
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -73,7 +73,7 @@ function formSubmit(e) {
           break;
         case 2000:
           calDuty = 0;
-          calExcise = Math.round((cif + 1358946) * 0.3 + 1358946);
+          calExcise = Math.round((cif + 1355250) * 0.3 + 1355250);
           calVat = 0;
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -87,7 +87,7 @@ function formSubmit(e) {
           break;
         case 3000:
           calDuty = 0;
-          calExcise = calExcise = Math.round((cif + 2822427) * 0.7 + 2822427);
+          calExcise = calExcise = Math.round((cif + 2814750) * 0.7 + 2814750);
           calVat = 0;
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -101,7 +101,7 @@ function formSubmit(e) {
           break;
         case 3001:
           calDuty = 0;
-          calExcise = calExcise = Math.round((cif + 3031496) * 1 + 3031496);
+          calExcise = calExcise = Math.round((cif + 3023250) * 1 + 3023250);
           calVat = 0;
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -115,7 +115,7 @@ function formSubmit(e) {
           break;
       }
       break;
-    case "new":
+    case 'new':
       switch (ccRadio) {
         case 1000:
           calDuty = Math.round(0.45 * cif);
@@ -147,7 +147,7 @@ function formSubmit(e) {
           break;
         case 1800:
           calDuty = Math.round(0.45 * cif);
-          calExcise = Math.round(0.1 * calDuty + cif);
+          calExcise = Math.round(0.1 * (calDuty + cif));
           calVat = Math.round(0.14 * (cif + calDuty + calExcise));
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -161,7 +161,7 @@ function formSubmit(e) {
           break;
         case 2000:
           calDuty = Math.round(0.45 * cif);
-          calExcise = Math.round(0.1 * calDuty + cif);
+          calExcise = Math.round(0.1 * (calDuty + cif));
           calVat = Math.round(0.14 * (cif + calDuty + calExcise));
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -175,7 +175,7 @@ function formSubmit(e) {
           break;
         case 3000:
           calDuty = Math.round(0.45 * cif);
-          calExcise = Math.round(1.1 * calDuty + cif);
+          calExcise = Math.round(1.1 * (calDuty + cif));
           calVat = Math.round(0.14 * (cif + calDuty + calExcise));
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
@@ -189,7 +189,7 @@ function formSubmit(e) {
           break;
         case 3001:
           calDuty = Math.round(0.45 * cif);
-          calExcise = Math.round(1.4 * calDuty + cif);
+          calExcise = Math.round(1.4 * (calDuty + cif));
           calVat = Math.round(0.14 * (cif + calDuty + calExcise));
           calTotal = calDuty + calExcise + calVat + cif;
           calTotalTax = calDuty + calExcise + calVat;
